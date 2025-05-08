@@ -448,7 +448,11 @@ do
 						local ilvl = text:match(ITEM_LEVEL)
 						if ilvl then
 							ilvl = tonumber(ilvl)
-							inspectData['ilvl'] = inspectData['ilvl'] + ilvl
+
+							if itemSlotID ~= 18 then
+								inspectData['ilvl'] = inspectData['ilvl'] + ilvl
+							end
+
 							ilvl_count = ilvl_count + 1
 
 							inspectData['items_ilvl'][itemSlotID] = ilvl
